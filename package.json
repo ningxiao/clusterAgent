@@ -1,0 +1,45 @@
+{
+    "name": "clusteragent",
+    "version": "1.2.2",
+    "license": "MIT",
+    "author": "ningxiao@meitu.com",
+    "description": "node架构",
+    "scripts": {
+        "build": "rm -rf dist && ./node_modules/.bin/etsc",
+        "start:dev": "export NODE_ENV=development && nodemon",
+        "start:prod": "export NODE_ENV=development && node dist/app.js",
+        "lint": "eslint \"{src}/**/*.ts\" --fix",
+        "prettier": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+        "commit": "npm run prettier && npm run lint && git add --all && git-cz",
+        "preinstall": "npx only-allow pnpm"
+    },
+    "engines": {
+        "node": ">=14 <17",
+        "pnpm": ">=6.24.4"
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "dayjs": "^1.11.3",
+        "log4js": "^6.4.4",
+        "typescript": "^4.7.3",
+        "esbuild":"^0.14.47",
+        "http-parser":"^1.0.3",
+        "esbuild-node-tsc":"^1.8.2"
+    },
+    "devDependencies": {
+        "@types/node": "16.11.7",
+        "@types/axios": "^0.14.0",
+        "@commitlint/cli": "^17.0.0",
+        "@commitlint/config-conventional": "17.0.0",
+        "conventional-changelog-conventionalcommits":"^4.6.3",
+        "@typescript-eslint/eslint-plugin": "^5.27.1",
+        "@typescript-eslint/parser": "^5.27.1",
+        "eslint": "7.32.0",
+        "git-cz": "^4.8.0",
+        "husky": "^7.0.4",
+        "nodemon": "^2.0.15",
+        "npx": "^10.2.2",
+        "prettier": "^2.6.2",
+        "only-allow": "^1.0.0"
+    }
+}
