@@ -25,8 +25,8 @@ __export(master_exports, {
 });
 module.exports = __toCommonJS(master_exports);
 var import_child_process = __toESM(require("child_process"));
-const workers = [];
 const cpus = 4;
+const workers = [];
 const createWorker = () => {
   for (let i = 0; i < cpus; i++) {
     workers.push(import_child_process.default.fork("./dist/master/worker.js", ["normal"]));

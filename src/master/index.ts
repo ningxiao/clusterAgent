@@ -1,7 +1,7 @@
 import net from 'net';
 import child_process from 'child_process';
-const workers: Array<child_process.ChildProcess> = [];
 const cpus = 4;
+const workers: Array<child_process.ChildProcess> = [];
 export const createWorker = () => {
     for (let i = 0; i < cpus; i++) {
         workers.push(child_process.fork('./dist/master/worker.js', ['normal']));

@@ -8,7 +8,7 @@ class Response {
     private body = '';
     constructor() {
         this.headers = {
-            'Content-Type': 'text/plain'
+            'Content-Type': 'text/plain;charset=utf-8'
         };
     }
     public setStatus(status: number) {
